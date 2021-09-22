@@ -5,17 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
+
+
+
 namespace ITSC.DATA
 {
     public class ABM_Alumno
     {
-        public static IEnumerable<Alumno> Get()
-        {
-            using (var db = new ITSCContext()) {
-                return db.alumnos.ToList();
-            }
-        }
-
         public static Alumno Get(int id)
         {
             using (var db = new ITSCContext()) {
@@ -34,7 +31,10 @@ namespace ITSC.DATA
                     alumnos = from a in alumnos
                               let nombreUpper = a.nombre.ToUpper()
                               let apellidoUpper = a.apellido.ToUpper()
-                              where nombreUpper.Contains(filtroStr.ToUpper()) || apellidoUpper.Contains(filtroStr.ToUpper())
+                              let dniStr = a.dni.ToString()
+                              where nombreUpper.StartsWith(filtroStr.ToUpper()) 
+                              || apellidoUpper.StartsWith(filtroStr.ToUpper()) 
+                              || dniStr.StartsWith(filtroStr)
                               orderby a.apellido, a.nombre
                               select a;
                 }
@@ -65,7 +65,7 @@ namespace ITSC.DATA
                 Alumno al = db.alumnos.Find(id);
                 if(al != null)
                 {
-                    al.status = 1;// por defecto es 0
+                    al.status = 1;// por defecto es 0 --habría que cambiar a un str más descriptivo o a un enum
                     ABM_Alumno.Save(al);
                     return true;
                 }
