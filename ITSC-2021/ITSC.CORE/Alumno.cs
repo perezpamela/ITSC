@@ -6,12 +6,12 @@ namespace ITSC.CORE
     public class Alumno
     {
         public int id { get; set; }
-        [Required, MaxLength(100)]
+        [Required(ErrorMessage ="Debe ingresar el nombre."), MaxLength(100)]
         public string nombre { get; set; }
-        [Required, MaxLength(100)]
+        [Required(ErrorMessage = "Debe ingresar el apellido."), MaxLength(100)]
         public string apellido { get; set; }
         public  DateTime fechaNacimiento { get; set; }
-        [Required, MaxLength(10)]
+        [Range(1000000, int.MaxValue, ErrorMessage ="Debe ingresar un DNI.")]
         public int dni { get; set; } 
         public string usuario_password { get; set; }
         public string usuario_tipo { get; set; }

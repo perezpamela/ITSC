@@ -13,6 +13,17 @@ namespace ITSC.DATA
 {
     public class ABM_Alumno
     {
+
+        //prueba de combobox
+        public static List<string> GetNombres()
+        {
+            using(var db = new ITSCContext())
+            {
+                var nombres = from a in db.alumnos select a.id.ToString();
+                return nombres.ToList();
+            }
+        }
+
         public static Alumno Get(int id)
         {
             using (var db = new ITSCContext()) {
@@ -42,7 +53,7 @@ namespace ITSC.DATA
             }
         }
 
-        public static void Save(Alumno alumno)
+        public static Alumno Save(Alumno alumno)
         {
             using (var db = new ITSCContext()) {
             
@@ -54,6 +65,7 @@ namespace ITSC.DATA
                     db.alumnos.Add(alumno);
                 }
                 db.SaveChanges();
+                return alumno;
                     
             }
         }
@@ -65,8 +77,11 @@ namespace ITSC.DATA
                 Alumno al = db.alumnos.Find(id);
                 if(al != null)
                 {
-                    al.status = 1;// por defecto es 0 --habría que cambiar a un str más descriptivo o a un enum
-                    ABM_Alumno.Save(al);
+                    //al.status = 1;// por defecto es 0 --habría que cambiar a un str más descriptivo o a un enum
+                    //ABM_Alumno.Save(al);
+                    //Momentaneamente borra de la base de datos en vez de dar de baja
+                    db.Entry(al).State = EntityState.Deleted;
+                    db.SaveChanges();
                     return true;
                 }
                 return false;

@@ -14,6 +14,8 @@ namespace ITSC.WebApp.Pages.Alumnos
         public IEnumerable<Alumno> alumnos { get; set; }
         [BindProperty(SupportsGet =true)]
         public string strBusqueda { get; set; }
+        [TempData]
+        public string Mensaje { get; set; }
         public void OnGet()
         {
             alumnos = ABM_Alumno.Get(strBusqueda);
