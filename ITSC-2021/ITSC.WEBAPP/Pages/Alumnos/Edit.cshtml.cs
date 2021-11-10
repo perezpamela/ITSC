@@ -12,8 +12,8 @@ namespace ITSC.WebApp.Pages.Alumnos
 {
     public class EditModel : PageModel
     {
-        //public List<SelectListItem> localidades { get; set; }
-        //public string localidad = "";
+        public List<SelectListItem> localidades { get; set; }
+        public string localidad = "";
 
 
         [BindProperty]
@@ -21,13 +21,13 @@ namespace ITSC.WebApp.Pages.Alumnos
         
         public IActionResult OnGet(int? alumnoId)
         {
-            //localidades = new List<SelectListItem>();
+            localidades = new List<SelectListItem>();
 
-            //foreach(var n in ABM_Alumno.GetNombres())
-            //{
-            //    localidades.Add(new SelectListItem { Text = n, Value = n });
+            foreach(var n in ABM_Alumno.GetNombres())
+            {
+                localidades.Add(new SelectListItem { Text = n, Value = n });
 
-            //}
+            }
 
             if (alumnoId.HasValue)
             {
@@ -36,6 +36,7 @@ namespace ITSC.WebApp.Pages.Alumnos
             } else
             {
                 alumno = new Alumno();
+                alumno.fechaNacimiento = DateTime.Now;
                 //Acá podrían ir algunos defaults ¿?
             }
 

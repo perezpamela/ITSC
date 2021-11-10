@@ -10,9 +10,12 @@ namespace ITSC.CORE
         public string nombre { get; set; }
         [Required(ErrorMessage = "Debe ingresar el apellido."), MaxLength(100)]
         public string apellido { get; set; }
-        public  DateTime fechaNacimiento { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime fechaNacimiento { get; set; }
         [Range(1000000, int.MaxValue, ErrorMessage ="Debe ingresar un DNI.")]
         public int dni { get; set; } 
+        [DataType(DataType.Password)]
+        [StringLength(50, ErrorMessage ="La contraseña debe tener al menos 8 caracteres.", MinimumLength =8)]
         public string usuario_password { get; set; }
         public string usuario_tipo { get; set; }
         public int telefono_caracteristica { get; set; }

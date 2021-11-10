@@ -9,33 +9,177 @@
             {
                 <h1>Cargando nuevo alumno.</h1>
             }
+
 <form method="post">
     <input type="hidden" asp-for="alumno.id" />
+    <div class="container">
+        <section class="row">
+            <!--FILA NOMBRE-APELLIDO-->
+            <div class="col-md-6 form-group">
+                <label asp-for="alumno.nombre">Nombre:</label>
+                <input asp-for="alumno.nombre" class="form-control" />
+                <span asp-validation-for="alumno.nombre" class="text-warning"></span>
+            </div>
 
-    <div class="form-group">
-        <label asp-for="alumno.nombre">Nombre:</label>
-        <input asp-for="alumno.nombre" class="form-control"/>
-        <span asp-validation-for="alumno.nombre" class="text-warning"></span>
+            <div class="col-md-6 form-group">
+                <label asp-for="alumno.apellido">Apellido:</label>
+                <input asp-for="alumno.apellido" class="form-control" />
+                <span asp-validation-for="alumno.apellido" class="text-warning"></span>
+            </div>
+        </section>
+
+
+        <section class="row">
+            <!--FILA FECHA_NAC-DNI-->
+            <div class="col-md-6 form-group">
+                <label asp-for="alumno.fechaNacimiento">Fecha de Nacimiento:</label>
+                <input id="fecha" asp-for="alumno.fechaNacimiento" class="form-control" data-format="yyyy-MM-dd" />
+                <span asp-validation-for="alumno.fechaNacimiento" class="text-warning"></span>
+            </div>
+
+            <div class="col-md-6 form-group">
+                <label asp-for="alumno.dni">DNI:</label>
+                <input asp-for="alumno.dni" class="form-control" />
+                <span asp-validation-for="alumno.dni" class="text-warning"></span>
+            </div>
+        </section>
+
+        <section class="row">
+            <!--FILA PASSWORD Y TIPO-->
+            <div class="col-md-6 form-group">
+                <label asp-for="alumno.usuario_password">Contraseña:</label>
+                <input asp-for="alumno.usuario_password" class="form-control" />
+                <span asp-validation-for="alumno.usuario_password" class="text-warning"></span>
+            </div>
+
+            <div class="col-md-6 form-group">
+                <label asp-for="alumno.usuario_tipo">Permisos:</label>
+                <input asp-for="alumno.usuario_tipo" class="form-control" />
+                <span asp-validation-for="alumno.usuario_tipo" class="text-warning"></span>
+            </div>
+        </section>
+
+        <section class="row">
+            <!--FILA TELEFONO-->
+            <div class="col-md-2 offset-md-4 form-group">
+                <label asp-for="alumno.telefono_caracteristica">Característica:</label>
+                <input asp-for="alumno.telefono_caracteristica" class="form-control" />
+                <span asp-validation-for="alumno.telefono_caracteristica" class="text-warning"></span>
+            </div>
+
+            <div class="col-md-6 form-group">
+                <label asp-for="alumno.telefono_nro">Teléfono Número:</label>
+                <input asp-for="alumno.telefono_nro" class="form-control" />
+                <span asp-validation-for="alumno.telefono_nro" class="text-warning"></span>
+            </div>
+        </section>
+
+        <section class="row">
+            <!--FILA CALLE-NRO-PISO-DEPTO-->
+            <div class="col-md-6 form-group">
+                <label asp-for="alumno.direccion_calle">Calle:</label>
+                <input asp-for="alumno.direccion_calle" class="form-control" />
+                <span asp-validation-for="alumno.direccion_calle" class="text-warning"></span>
+            </div>
+
+            <div class="col-md-2 form-group">
+                <label asp-for="alumno.direccion_nro">Número:</label>
+                <input asp-for="alumno.direccion_nro" class="form-control" />
+                <span asp-validation-for="alumno.direccion_nro" class="text-warning"></span>
+            </div>
+            <div class="col-md-2 form-group">
+                <label asp-for="alumno.direccion_piso">Piso:</label>
+                <input asp-for="alumno.direccion_piso" class="form-control" />
+                <span asp-validation-for="alumno.direccion_piso" class="text-warning"></span>
+            </div>
+            <div class="col-md-2 form-group">
+                <label asp-for="alumno.direccion_dpto">Departamento:</label>
+                <input asp-for="alumno.direccion_dpto" class="form-control" />
+                <span asp-validation-for="alumno.direccion_dpto" class="text-warning"></span>
+            </div>
+        </section>
+
+        <section class="row">
+            <!--FILA BARRIO-LOCALIDAD-->
+            <div class="col-md-6 form-group">
+                <div class="form-group">
+                    <label asp-for="alumno.direccion_barrio">Barrio:</label>
+                    <select class="form-control"
+                            asp-for="alumno.direccion_barrio"
+                            asp-items="@Model.localidades"></select> <!--prueba------------------------------------->
+                </div>
+                <span asp-validation-for="alumno.direccion_barrio" class="text-warning"></span>
+            </div>
+
+            <div class="col-md-6 form-group">
+                <div class="form-group">
+                    <label asp-for="alumno.direccion_localidad">Localidad:</label>
+                    <select class="form-control"
+                            asp-for="alumno.direccion_localidad"
+                            asp-items="@Model.localidades"></select> <!--prueba------------------------------------->
+                </div>
+                <span asp-validation-for="alumno.direccion_localidad" class="text-warning"></span>
+            </div>
+        </section>
+
+        <section class="row">
+            <!--FILA MAIL-->
+            <div class="col-12 form-group">
+                <label asp-for="alumno.email">Correo Electrónico:</label>
+                <input asp-for="alumno.email" class="form-control" />
+                <span asp-validation-for="alumno.email" class="text-warning"></span>
+            </div>
+        </section>
+        <fieldset>
+            <legend class="text-muted">CONTACTO DE EMERGENCIA</legend>
+
+            <section class="row">
+                <!--FILA CONTACTO EMERGENCIA-NOMBRE-TELEFONO-->
+                <div class="col-md-6 form-group">
+                    <label asp-for="alumno.contacto_emergencia_nombre">Nombre:</label>
+                    <input asp-for="alumno.contacto_emergencia_nombre" class="form-control" />
+                    <span asp-validation-for="alumno.contacto_emergencia_nombre" class="text-warning"></span>
+                </div>
+                <div class="col-md-2 form-group">
+                    <label asp-for="alumno.emergencia_tel_caracteristica">Característica:</label>
+                    <input asp-for="alumno.emergencia_tel_caracteristica" class="form-control" />
+                    <span asp-validation-for="alumno.emergencia_tel_caracteristica" class="text-warning"></span>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label asp-for="alumno.emergencia_tel_nro">Teléfono:</label>
+                    <input asp-for="alumno.emergencia_tel_nro" class="form-control" />
+                    <span asp-validation-for="alumno.emergencia_tel_nro" class="text-warning"></span>
+                </div>
+            </section>
+        </fieldset>
+
+
+        @*<section>
+            <div class="col-md-2">
+                <label asp-for="alumno.status">Estado:</label>
+                <input asp-for="alumno.status" class="form-control" />
+                <span asp-validation-for="alumno.status" class="text-warning"></span>
+            </div>
+        </section>*@
+
     </div>
 
-    <div class="form-group">
-        <label asp-for="alumno.apellido">Apellido:</label>
-        <input asp-for="alumno.apellido" class="form-control"/>
-        <span asp-validation-for="alumno.apellido" class="text-warning" ></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="alumno.dni">DNI:</label>
-        <input asp-for="alumno.dni" />
-        <span asp-validation-for="alumno.dni" class="text-warning"></span>
-    </div>
-
-    @*<div class="form-group">
-        <label asp-for="alumno.direccion_localidad">Localidad:</label>
-        <select class="form-control"
-                asp-for="alumno.direccion_localidad"
-                asp-items="@Model.localidades"></select>
-    </div>*@
-
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    <section class="row">
+        <div class="offset-8 col-md-2">
+            <a asp-page="./List" class="btn btn-outline-secondary form-control">Cancelar</a>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary form-control">Guardar</button>
+        </div>
+    </section>
 </form>
+
+<script type="text/javascript">
+        $(function() {
+           // Bootstrap DateTimePicker v4
+           $('#fecha').datetimepicker({
+               pickTime: false
+
+           });
+        });
+</script>

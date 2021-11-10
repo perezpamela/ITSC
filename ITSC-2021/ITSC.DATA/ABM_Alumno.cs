@@ -34,7 +34,7 @@ namespace ITSC.DATA
         public static IEnumerable<Alumno> Get(string filtroStr)
         {
             using (var db = new ITSCContext()) {
-                IEnumerable<Alumno> alumnos = db.alumnos.ToList();
+                IEnumerable<Alumno> alumnos = db.alumnos.ToList().Where(a => a.status ==0);
                 if (!String.IsNullOrEmpty(filtroStr))
                 {
                     //alumnos = alumnos.Where(al => al.nombre.Contains(filtroStr)); no diferencia mayus/minus
@@ -43,9 +43,11 @@ namespace ITSC.DATA
                               let nombreUpper = a.nombre.ToUpper()
                               let apellidoUpper = a.apellido.ToUpper()
                               let dniStr = a.dni.ToString()
-                              where nombreUpper.StartsWith(filtroStr.ToUpper()) 
+                              where ( nombreUpper.StartsWith(filtroStr.ToUpper()) 
                               || apellidoUpper.StartsWith(filtroStr.ToUpper()) 
-                              || dniStr.StartsWith(filtroStr)
+                              || dniStr.StartsWith(filtroStr) )
+                              && a.status == 0 //activo
+
                               orderby a.apellido, a.nombre
                               select a;
                 }
@@ -77,11 +79,11 @@ namespace ITSC.DATA
                 Alumno al = db.alumnos.Find(id);
                 if(al != null)
                 {
-                    //al.status = 1;// por defecto es 0 --habría que cambiar a un str más descriptivo o a un enum
-                    //ABM_Alumno.Save(al);
+                    al.status = 1;// por defecto es 0 --habría que cambiar a un str más descriptivo o a un enum
+                    ABM_Alumno.Save(al);
                     //Momentaneamente borra de la base de datos en vez de dar de baja
-                    db.Entry(al).State = EntityState.Deleted;
-                    db.SaveChanges();
+                    //db.Entry(al).State = EntityState.Deleted;
+                    //db.SaveChanges();
                     return true;
                 }
                 return false;
