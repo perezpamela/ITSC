@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ITSC.WebApp.Pages.Alumnos
 {
-    public class EditModel : PageModel
+    public class EditModel :  MBase//PageModel
     {
         public List<SelectListItem> localidades { get; set; }
         public string localidad = "";

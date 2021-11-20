@@ -9,8 +9,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ITSC.WebApp.Pages.Alumnos
 {
-    public class DeleteModel : PageModel
+    public class DeleteModel : MBase//PageModel
     {
+        
         
         public Alumno alumno{ get; set; }
         

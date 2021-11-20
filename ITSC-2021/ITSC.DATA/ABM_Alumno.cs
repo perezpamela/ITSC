@@ -24,6 +24,18 @@ namespace ITSC.DATA
             }
         }
 
+
+
+        public static Alumno GetAlumnoDni(int dni)
+        {
+            using(var db = new ITSCContext()) {
+            Alumno a = db.alumnos.ToList().Where(a => a.dni == dni).FirstOrDefault();
+                if (a is null) { return db.alumnos.Find(2); }
+                else
+                { return a; }
+            }
+        }
+
         public static Alumno Get(int id)
         {
             using (var db = new ITSCContext()) {

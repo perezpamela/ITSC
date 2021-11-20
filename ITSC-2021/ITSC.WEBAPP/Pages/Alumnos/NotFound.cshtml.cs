@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ITSC.WebApp.Pages.Alumnos
 {
-    public class NotFoundModel : PageModel
+    public class NotFoundModel : MBase//PageModel
     {
         public void OnGet()
         {
