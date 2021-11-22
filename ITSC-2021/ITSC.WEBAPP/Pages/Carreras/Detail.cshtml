@@ -1,0 +1,28 @@
+﻿@page "{carreraId:int}"
+@model ITSC.WebApp.Pages.Carreras.DetailModel
+@{
+}
+<div class="container">
+    @if (Model.mensaje != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <button type="button" class="btn-close close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            @Model.mensaje.
+        </div>
+    }
+    <h5 class="p-1 text-center font-weight-bold alert-info">@Model.carrera.descripcion</h5>
+    <section class="row">
+        <p class="col-md-4">Plan: @Model.carrera.plan</p>
+        <p class="col-md-6">Inicio de vigencia: @Model.fecha_inicio</p>
+    </section>
+    <section class="row">
+        <p class="col-md-6 offset-4">Fin de vigencia: @Model.fecha_fin</p>
+    </section>
+    <p class="p-1 text-center font-weight-bold alert-info">@Model.estado</p>
+
+
+    <a class="position-absolute m-3 btn btn-outline-secondary"
+       asp-page="./List"><i class="bi bi-arrow-left-square text-lg-left"></i> Lista Carreras</a>
+
+
+</div>

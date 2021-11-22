@@ -19,11 +19,11 @@ namespace ITSC.WebApp.Pages
         public List<SelectListItem> carreras { get; set; }
         public SedeCarrera sc { get; set; }  //debería ser por materias en el caso del profesor
 
-        public void OnGet(int usuarioDNI)
+        public void OnGet(int usuario)
         {
-            Alumno al = ABM_Alumno.GetAlumnoDni(usuarioDNI);
-            carreras = new List<SelectListItem>();
-            foreach (var c in GetUsuarios.GetCarreras(usuarioDNI))
+            Alumno al = ABM_Alumno.GetAlumnoDni(usuario);
+            carreras = new List<SelectListItem>(); 
+            foreach (var c in GetUsuarios.GetCarreras(usuario))
             {
                 carreras.Add(new SelectListItem
                 {

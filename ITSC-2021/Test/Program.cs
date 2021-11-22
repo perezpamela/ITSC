@@ -8,21 +8,15 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            Alumno al1 = new Alumno();
-            al1.nombre = "Pamela";
-            al1.apellido = "Perez";
-            al1.dni = 30000589;
-            Alumno al2 = new Alumno();
-            al2.nombre = "Juan";
-            al2.apellido = "Perez";
-            al2.dni = 12678990;
+            //Carrera c1 = new Carrera();
+            //c1.descripcion = "Enfermería";
+            //c1.plan = "P1996";
+            //c1.plan_start_date = DateTime.Now;
+            //ABMCarrera.Save(c1);
 
-            ABM_Alumno.Save(al1);
-            ABM_Alumno.Save(al2);
-
-            foreach(var al in ABM_Alumno.Get("Pere"))
+            foreach(var c in ABMCarrera.Get(""))
             {
-                Console.WriteLine($"Nombre: {al.nombre}. Apellido: {al.apellido}. DNI: {al.dni}.");
+                Console.WriteLine($"Nombre: {c.descripcion}. Plan: {c.plan}");
             }
         }
     }

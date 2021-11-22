@@ -24,7 +24,7 @@ namespace ITSC.CORE
         public int status { get; set; }
 
         //Relación con Carrera/s
-        public List<Carrera> Carreras { get; set; }
+        //public List<Carrera> Carreras { get; set; }
 
     }
 }

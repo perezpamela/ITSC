@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 
 namespace ITSC.WebApp.Pages
 {
-    public class IndexModel : PageModel
+    public class IndexModel : MBase//PageModel
     {
         [BindProperty(SupportsGet = true)]
         public int usuarioDNI { get; set; }
@@ -16,11 +16,17 @@ namespace ITSC.WebApp.Pages
             _logger = logger;
         }
 
-        public void OnGet(int usuarioDNI)
+        public IActionResult OnGet(int usuarioDNI)
         {
-            usuarioDNI = 36240589;
+            return Page();
         }
 
-            
+        public IActionResult OnPost(int usuarioDNI)
+        {
+            return RedirectToPage("./Dashboard", new { usuario = usuarioDNI });
+
+        }
+
+
     }
 }

@@ -19,7 +19,7 @@
     </div>
     <div class="d-flex flex-row justify-content-center bd-highlight mt-3">
         <img class='p-5' src='https://www.institutotecnicocordoba.com/_files/200001679-a070ba16b5/logo%202018.jpg'>
-        <form class='d-flex align-items-center  flex-column'  >
+        <form class='d-flex align-items-center  flex-column' method="post">
             <h5 class='mt-5'>Iniciar Sesión</h5>
             <div class="input-group m-3">
                 <span class="input-group-text">
@@ -32,15 +32,14 @@
                 <input disabled class="form-control" type='password' placeholder='Contraseña'>
             </div>
             <button type="submit" class='btn btn-primary mb-3' 
-                                                 asp-page="./Dashboard"
-                                                 asp-route-usuario="@Model.usuarioDNI">Aceptar</button>
+                                                 value="@Model.usuarioDNI">Aceptar</button>
             <a href='./Alumnos/List' class='link-info'>Recuperar contraseña</a>
         </form>
     </div>
 
     <footer class="border-top footer text-muted">
         <div class="container text-center">
-            &copy; 2021 - ITSC.WebApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2021 - ITSC.WebApp - <a asp-area="" asp-page="/Carreras/List">Prueba Carreras</a>
         </div>
     </footer>
    
