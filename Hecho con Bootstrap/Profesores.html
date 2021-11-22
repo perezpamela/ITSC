@@ -1,0 +1,186 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Profesores</title>
+</head>
+<body>
+    <div class="container contenedor">
+        <!--Barra de Navegacion-->
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-end">
+                    <div class="row mx-1">
+                        <div class="col">
+                            <a class="navbar-brand " href="index.html">
+                                <img class="img-fluid logo m" src="../imagenes/iconoitsc3.png" alt="logo instituto">
+                            </a>
+                        </div>
+                    </div>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item navinicio start-0"><a href="index.html" class="nav-linK">INICIO</a></li>
+                        <li class="nav-item dropdown" >
+                            <a href="" class="nav-linK dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" id="dropdown-menu">LEGAJOS</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+                                <li class="dropdown">
+                                <li><a href="buscar_legajos.html" class="dropdown-item">BUSCAR LEGAJOS</a></li>
+                                <li class="hd"></li>
+                                <li><a href="Profesores.html" class="dropdown-item">AGREGAR PROFESOR</a></li>
+                                <li><a href="Alumnos.html" class="dropdown-item"> AGREGAR ALUMNO</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown" >
+                            <a href="#" class="nav-linK dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" id="dropdown-menu">MATERIA O CARRERA</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+                                <li class="dropdown">
+                            <!--<li><a href="#" class="dropdown-item">BUSCAR LEGAJOS</a></li>-->
+                                <li class="hd"></li>
+                                <li><a href="#" class="dropdown-item">NUEVA CARRERA</a></li>
+                                <li><a href="#" class="dropdown-item">NUEVA MATERIA</a></li>
+                                <li><a href="#" class="dropdown-item">BUSCAR</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown" >
+                            <a href="#" class="nav-linK dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" id="dropdown-menu">ASISTENCIAS</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+                                <li><a href="#" class="dropdown-item"> DE LOS PROFESORES</a></li>
+                                <li><a href="#" class="dropdown-item"> DE LOS ALUMNOS</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-linK dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" id="dropdown-menu">EXAMENES</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+                                <li><a href="Nueva_Mesa.html" class="dropdown-item">NUEVA MESA</a></li>
+                                <li><a href="Inscriptos.html" class="dropdown-item">INSCRIPTOS</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-linK dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" id="dropdown-menu">NOTAS</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+                                <li><a href="Nota_Final.html" class="dropdown-item">NOTA FINAL</a></li>
+                                <li><a href="Resumen_de_Notas.html" class="dropdown-item">RESUMEN DE NOTAS</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+        </nav>
+    </div>
+        <!--Principal-->
+        <div class="container contenedor mt-3">
+            <div class="row">
+                <div class="col">
+                    <h2 class="h2 text-light">Inscirpcion de Profesores</h2>
+               </div>
+            </div>
+            <section class="row mt-3">
+                <div class="col-4 ">
+                    <form action="" class="text-light">
+                        <section class="carrera">
+                            <label for="carrera" class="form-label d-block">Seleccione una Carrera</label>
+                            <select name="carrera" id="carrera" class=" d-block form-select form-select-sm w-50">
+                                <option value="carrera1">Carrera1</option>
+                                <option value="carrera2">Carrera2</option>
+                                <option value="carrera3">Carrera3</option>
+                            </select>
+                        </section>
+                    </form> 
+                </div>
+                <div class="col-4">
+                    <form action="" class="text-light">
+                        <section class="materia">
+                            <label for="materia" class="form-label d-block">Seleccione una materia</label>
+                            <select name="carrera" id="carrera" class=" d-block form-select form-select-sm w-50">
+                                <option value="materia1">materia1</option>
+                                <option value="materia2">materia2</option>
+                                <option value="materia3">materia3</option>
+                            </select>
+                        </section>
+                    </form>
+                </div>
+                <div class="col-4">
+                    <section class="año text-light">
+                        <label for="año" class="form-label d-block">Seleccione una materia</label>
+                        <select name="carrera" id="año" class=" d-block form-select form-select-sm w-50">
+                            <option value="1°año">1° Año</option>
+                            <option value="2°año">2° Año</option>
+                            <option value="3°año">3° Año</option>
+                        </select>
+                    </section>
+                </div>
+            </section>
+            <section class="row justify-content-end mt-3">
+                <div class="col text-light">
+                    <form action="">
+                        <label for="nombre" class="form-label">Apellido</label>
+                        <input type="text" class="form-control">
+                    </form>
+                </div>
+                <div class="col text-light">
+                    <form action="">
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="apellido">
+                    </form>
+                </div>
+            </section>
+            <section class="row align-items-start">
+                <div class="col text-light">
+                    <form action="">
+                        <label for="dni" class="form-label">DNI</label>
+                        <input type="text" class="form-control" id="dni">
+                    </form>
+                </div>
+                <div class="col text-light">
+                    <form action="">
+                        <label for="fecha_de_nacimiento" class="form-label">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control " id="fecha_de_nacimiento">
+                    </form>
+                </div>
+            </section>
+            <section class="row align-items-start">
+                <div class="col text-light">
+                    <form action="">
+                        <label for="titulo" class="form-label">Título1</label>
+                        <input type="text" class="form-control " id="titulo">
+                    </form>
+                </div>
+                <div class="col text-light ">
+                    <form action="">
+                        <label for="titulo" class="form-label">Título2</label>
+                        <input type="text" class="form-control " id="titulo">
+                    </form>
+                </div>
+                <div class="col text-light">
+                    <form action="">
+                        <label for="titulo" class="form-label">Título3</label>
+                        <input type="text" class="form-control " id="titulo">
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!--Footer-->
+        <div class="container contenedor mt-3">
+            <div class="row align-items-start">
+                <div class="col">
+                    <p class="h1 text-light"> Footer</p>
+                </div>
+                <div class="col">
+                    <p class="h1 text-light"> Footer</p>
+                </div>
+                <div class="col">
+                    <p class="h1 text-light"> Footer</p>
+                </div>
+            </div>
+        </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

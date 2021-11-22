@@ -1,0 +1,144 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Nota Final</title>
+</head>
+<body>
+    <div class="container contenedor">
+                         <!--Barra de Navegacion-->
+        <nav class="navbar navbar-expand navbar-dark justify-content-between">
+                    <div class="row">
+                        <div class="col">
+                            <a class="navbar-brand " href="index.html">
+                                <img class="img-fluid logo m" src="../imagenes/iconoitsc3.png" alt="logo instituto">
+                            </a>
+                        </div>
+                    </div>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item navinicio start-0"><a href="index.html" class="nav-linK">INICIO</a></li>
+                        <li class="nav-item dropdown" >
+                            <a href="#" class="nav-linK dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" id="dropdown-menu">LEGAJOS</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+                                <li><a href="Profesores.html" class="dropdown-item">PROFESORES</a></li>
+                                <li><a href="Alumnos.html" class="dropdown-item">ALUMNOS</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-linK dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" id="dropdown-menu">EXAMENES</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+                                <li><a href="Nueva_Mesa.html" class="dropdown-item">NUEVA MESA</a></li>
+                                <li><a href="Inscriptos.html" class="dropdown-item">INSCRIPTOS</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-linK dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" id="dropdown-menu">NOTAS</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+                                <li><a href="Nota_Final.html" class="dropdown-item">NOTA FINAL</a></li>
+                                <li><a href="Resumen_de_Notas.html" class="dropdown-item">RESUMEN DE NOTAS</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+                <input class="mx-lg-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-light my-2 mx-1" type="submit">Buscar</button>
+        </nav>
+    </div>
+                         <!--Principal-->
+    <div class="container contenedor mt-3">
+        <section class="row align-items-center mt-3">
+                <main class="col-8">
+                    <form action="">
+                        <label for="apellido" class="form-label text-light d-block">Apellido</label>
+                        <input type="text" class="w-75 form-control form- d-block" id="apellido">
+
+                        <label for="nombre" class="form-label text-light d-block">Nombre</label>
+                        <input type="text" class="w-75 form-control d-block" id="nombre">
+
+                        <label for="dni" class="form-label text-light d-block">DNI</label>
+                        <input type="text" class="w-50 form-control d-block" id="dni">
+
+                        <label for="nota" class="form-label text-light d-block">Nota</label>
+                        <input type="text" class="w-25 form-control d-block" id="nota">
+
+                        <label for="fecha" class="form-label text-light d-block ">Fecha</label>
+                        <input type="date" class="w-25 form-control d-block" id="fecha">
+
+                        <label for="materia" class="form-label text-light d-block">Materia</label>
+                        <select name="materia" id="materia" class="form-select form-select-sm w-50 ">
+                            <option value="materia1">Materia 1</option>
+                            <option value="materia2">Materia 2</option>
+                            <option value="materia3">Materia 3</option>
+                            <option value="materia4">Materia 4</option>
+                        </select>
+
+                        <label for="carrera" class="form-label text-light d-block">Carrera</label>
+                        <select name="carrera" id="carrera" class="form-select form-select-sm w-50 ">
+                            <option value="1">Carrera 1</option>
+                            <option value="2">Carrera 2</option>
+                            <option value="3">Carrera 3</option>
+                            <option value="4">Carrera 4</option>
+                        </select>
+
+                        <label for="libro_matriz" class=" form-label text-light d-block">Libro Matriz</label>
+                        <input type="text" class="w-25 form-control d-block" id="libro_matriz">
+
+                        
+                        <label for="folio" class=" form-label text-light d-block">Folio</label>
+                        <input type="text" class="w-25 form-control d-block" id="folio">
+                    </form>
+                </main>
+                         <!--Botones--> 
+                <aside class="col-4">
+                    <button type="submit" 
+                    class="btn btn-outline-dark bg-gradient text-light d-block mb-1 w-100">GUARDAR</button>
+                    <button type="submit" 
+                    class="btn bg-gradient btn-outline-dark text-light d-block w-100">Boton2</button>
+                </aside>
+        </section>
+                         <!--Resumen de Notas-->
+        <section class="row align-items-center">
+            <div class="col mb-5">
+                <label for="resumen" class="form-label text-light">Resumen de Notas</label>
+                <textarea name="resumen" id="resumen" class="form-control"></textarea>
+            </div>
+        </section>
+                          <!--Footer-->
+        <footer class="row">
+            <div class="col h-25 text-light">
+                <ul class="footer__ul">
+                    <li class="footer__ul-li"><a class="footer__link" href="index.html">indice</a></li>
+                    <li>legajos
+                        <ul>
+                            <li><a class="footer__link" href="Profesores.html">profesores</a></li>
+                            <li><a class="footer__link" href="Alumnos.html">alumnos</a></li>
+                        </ul>
+                    </li>
+                    <li>examenes
+                        <ul>
+                            <li><a class="footer__link" href="Nueva_Mesa.html">nueva mesa</a></li>
+                            <li><a class="footer__link" href="Inscriptos.html">inscriptos</a></li>
+                        </ul>
+                    </li>
+                    <li>notas
+                        <ul>
+                            <li><a class="footer__link" href="Nota_Final.html">nota final</a></li>
+                            <li><a class="footer__link" href="Resumen_de_Notas.html">resumen de notas</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <script src="js/ry-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

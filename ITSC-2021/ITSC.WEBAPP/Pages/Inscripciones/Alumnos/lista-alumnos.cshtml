@@ -1,0 +1,84 @@
+﻿@page
+@model ITSC.WebApp.Pages.Inscripciones.lista_alumnosModel
+@{
+}
+
+<html>
+<head>
+    <title>Listado de Profesores</title>
+</head>
+<body>
+    <div class="container-fluid">
+        @if (Model.Mensaje != null)
+        {
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                @Model.Mensaje
+            </div>
+        }
+        <!--Botones-->
+        <div class="row">
+            <div class="col ">
+                <a asp-page="./Edit" class="btn btn-primary">Nuevo Alumno</a>
+                <a asp-page="./Import" class="btn btn-secondary">Importar Alumnos</a>
+            </div>
+        </div>
+
+        <!--Barra de Busqueda-->
+        <form method="get" class="mt-1">
+            <div class="input-group">
+                <input class="form-control border-dark mb-2 mt-2" asp-for="strBusqueda" />
+                <button type="submit" class="btn btn-outline-info ml-1 mb-2 mt-2 w-25 "><i class="bi bi-search"></i></button>
+            </div>
+        </form>
+        <!--tabla-->
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <td>DNI</td>
+                    <td>Nombre Completo</td>
+                    <td>fecha de nacimiento</td>
+                    <td>calle</td>
+                    <td>telefono</td>
+                <!--<td>Carrera</td>
+                    <td>Año</td>
+                    <td>Libro Matriz</td>
+                    <td>Folio</td>-->
+                    <td>mostrar/editar/borrar</td>
+                </tr>
+            </thead>    
+            
+            @foreach (var a in Model.OBJalumnos)
+            {
+        <tr>
+            <!--Datos-->
+            <td>@a.dni</td>
+            <td>@a.nombre @a.apellido</td>
+            <td>@a.fechaNacimiento</td>
+            <td>@a.direccion_calle</td>
+            <td>@a.telefono_caracteristica @a.telefono_nro</td>
+
+            <!--Botones-->
+
+            <td>
+                <a asp-page="Inscripciones/Mostrar"
+                   asp-route-alumnoId="@a.id"><i class="bi bi-person-square"></i></a>
+            </td>
+            <td>
+                <a asp-page="Inscripciones/Editar"
+                   asp-route-alumnoId="@a.id"><i class="bi bi-pencil-square"></i></a>
+            </td>
+
+            <td>
+                <a asp-page="Inscripciones/Editar"
+                   asp-route-alumnoId="@a.id"><i class="bi bi-pencil-square"></i></a>
+            </td>
+
+        </tr>
+            }
+
+        </table>
+
+    </div>
+</body>
+</html>

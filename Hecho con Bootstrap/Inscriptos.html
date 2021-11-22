@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <title>INICIO</title>
+</head>
+<body>
+    <div class="container contenedor">
+        <!--Barra de Navegacion-->
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-between">
+                    <div class="row mx-1">
+                        <div class="col">
+                            <a class="navbar-brand " href="index.html">
+                                <img class="img-fluid logo m" src="../imagenes/iconoitsc3.png" alt="logo instituto">
+                            </a>
+                        </div>
+                    </div>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item navinicio start-0"><a href="index.html" class="nav-linK">INICIO</a></li>
+                        <li class="nav-item dropdown" >
+                            <a href="#" class="nav-linK dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" id="dropdown-menu">LEGAJOS</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+                                <li><a href="Profesores.html" class="dropdown-item">PROFESORES</a></li>
+                                <li><a href="Alumnos.html" class="dropdown-item">ALUMNOS</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-linK dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" id="dropdown-menu">EXAMENES</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+                                <li><a href="Nueva_Mesa.html" class="dropdown-item">NUEVA MESA</a></li>
+                                <li><a href="Inscriptos.html" class="dropdown-item">INSCRIPTOS</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-linK dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" id="dropdown-menu">NOTAS</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+                                <li><a href="Nota_Final.html" class="dropdown-item">NOTA FINAL</a></li>
+                                <li><a href="Resumen_de_Notas.html" class="dropdown-item">RESUMEN DE NOTAS</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+                <input class="mx-lg-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-light my-2 mx-1" type="submit">Buscar</button>
+                <!--Principal-->
+                
+                <!--Footer-->
+                <footer class="row footer">
+                    <div class="col">
+                        <ul class="footer__ul">
+                            <li class="footer__ul-li"><a class="footer__link" href="index.html">indice</a></li>
+                            <li>legajos
+                                <ul>
+                                    <li><a class="footer__link" href="Profesores.html">profesores</a></li>
+                                    <li><a class="footer__link" href="Alumnos.html">alumnos</a></li>
+                                </ul>
+                            </li>
+                            <li>examenes
+                                <ul>
+                                    <li><a class="footer__link" href="Nueva_Mesa.html">nueva mesa</a></li>
+                                    <li><a class="footer__link" href="Inscriptos.html">inscriptos</a></li>
+                                </ul>
+                            </li>
+                            <li>notas
+                                <ul>
+                                    <li><a class="footer__link" href="Nota_Final.html">nota final</a></li>
+                                    <li><a class="footer__link" href="Resumen_de_Notas.html">resumen de notas</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </footer>
+        </nav>
+    </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

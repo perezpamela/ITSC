@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Alumnos</title>
+</head>
+<body>
+
+    <div class="container contenedor">
+        <!--Barra de Navegacion-->
+<nav class="navbar navbar-expand navbar-dark justify-content-between">
+   <div class="row">
+       <div class="col">
+           <a class="navbar-brand " href="index.html">
+               <img class="img-fluid logo m" src="../imagenes/iconoitsc3.png" alt="logo instituto">
+           </a>
+       </div>
+   </div>
+<div class="collapse navbar-collapse" id="menu">
+   <ul class="navbar-nav ">
+       <li class="nav-item navinicio start-0"><a href="index.html" class="nav-linK">INICIO</a></li>
+       <li class="nav-item dropdown" >
+           <a href="#" class="nav-linK dropdown-toggle" role="button" data-bs-toggle="dropdown"
+           aria-expanded="false" id="dropdown-menu">LEGAJOS</a>
+           <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+               <li><a href="Profesores.html" class="dropdown-item">PROFESORES</a></li>
+               <li><a href="Alumnos.html" class="dropdown-item">ALUMNOS</a></li>
+           </ul>
+       </li>
+       <li class="nav-item dropdown">
+           <a href="#" class="nav-linK dropdown-toggle" role="button" data-bs-toggle="dropdown"
+           aria-expanded="false" id="dropdown-menu">EXAMENES</a>
+           <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+               <li><a href="Nueva_Mesa.html" class="dropdown-item">NUEVA MESA</a></li>
+               <li><a href="Inscriptos.html" class="dropdown-item">INSCRIPTOS</a></li>
+           </ul>
+       </li>
+       <li class="nav-item dropdown">
+           <a href="#" class="nav-linK dropdown-toggle" role="button" data-bs-toggle="dropdown"
+           aria-expanded="false" id="dropdown-menu">NOTAS</a>
+           <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+               <li><a href="Nota_Final.html" class="dropdown-item">NOTA FINAL</a></li>
+               <li><a href="Resumen_de_Notas.html" class="dropdown-item">RESUMEN DE NOTAS</a></li>
+           </ul>
+       </li>
+
+   </ul>
+</div>
+<input class="mx-lg-2" type="search" placeholder="Buscar" aria-label="Search">
+<button class="btn btn-outline-light my-2 mx-1" type="submit">Buscar</button>
+</nav>
+</div>
+        <!--Principal-->
+<div class="container contenedor mt-3">
+<section class="row align-items-center mt-3">
+<main class="col-8">                                            
+   <form action="">
+       <section class="carrera">
+
+        <label for="carrera" class="form-label text-light d-block">Carrera</label>
+        <select name="carrera" id="carrera" class="form-select form-select-sm w-50 ">
+            <option value="carrera 1">Carrera 1</option>
+            <option value="carrera 2">Carrera 2</option>
+            <option value="carrera 3">Carrera 3</option>
+            <option value="carrera 4">Carrera 4</option>
+        </select>
+        <label for="año" class="form-label text-light d-block">Año</label>
+        <select name="año" id="año" class="form-select form-select-sm w-25 ">
+            <option value="1° año">1° Año</option>
+            <option value="2° año">2° Año</option>
+            <option value="3° año">3° Año</option>
+            <option value="4° año">4° Año</option>
+        </select>
+
+        <label for="division" class="form-label text-light d-block">division</label>
+        <select name="division" id="division" class="form-select form-select-sm w-25 ">
+            <option value="division a">A</option>
+            <option value="division b">B</option>
+            <option value="division c">C</option>
+            <option value="division d">D</option>
+        </select>
+        
+       </section>
+       <section class="datos_personales">
+
+        <label for="apellido" class="form-label text-light d-block">Apellido</label>
+        <input type="text" class="w-75 form-control form- d-block" id="apellido">
+ 
+        <label for="nombre" class="form-label text-light d-block">Nombre</label>
+        <input type="text" class="w-75 form-control d-block" id="nombre">
+ 
+        <label for="dni" class="form-label text-light d-block">DNI</label>
+        <input type="text" class="w-50 form-control d-block" id="dni">
+ 
+        <label for="fecha_de_nacimiento" class="form-label text-light d-block ">Fecha de Nacimiento</label>
+        <input type="date" class="w-25 form-control d-block" id="fecha_de_nacimiento">
+ 
+       </section>
+       
+       <section class="libro_matriz">
+               
+       <label for="libro_matriz" class=" form-label text-light d-block">Libro Matriz</label>
+       <input type="text" class="w-25 form-control d-block" id="libro_matriz">
+
+       <label for="folio" class=" form-label text-light d-block">Folio</label>
+       <input type="text" class="w-25 form-control d-block" id="folio">
+       
+    </section>
+   </form>
+</main>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
