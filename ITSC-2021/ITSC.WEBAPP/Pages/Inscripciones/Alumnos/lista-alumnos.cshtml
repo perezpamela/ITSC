@@ -50,31 +50,31 @@
             
             @foreach (var a in Model.OBJalumnos)
             {
-        <tr>
-            <!--Datos-->
-            <td>@a.dni</td>
-            <td>@a.nombre @a.apellido</td>
-            <td>@a.fechaNacimiento</td>
-            <td>@a.direccion_calle</td>
-            <td>@a.telefono_caracteristica @a.telefono_nro</td>
-
-            <!--Botones-->
-
-            <td>
-                <a asp-page="Inscripciones/Mostrar"
-                   asp-route-alumnoId="@a.id"><i class="bi bi-person-square"></i></a>
-            </td>
-            <td>
-                <a asp-page="Inscripciones/Editar"
-                   asp-route-alumnoId="@a.id"><i class="bi bi-pencil-square"></i></a>
-            </td>
-
-            <td>
-                <a asp-page="Inscripciones/Editar"
-                   asp-route-alumnoId="@a.id"><i class="bi bi-pencil-square"></i></a>
-            </td>
-
-        </tr>
+             <tr>
+                 <!--Datos-->
+                 <td>@a.dni</td>
+                 <td>@a.nombre @a.apellido</td>
+                 <td>@a.fechaNacimiento</td>
+                 <td>@a.direccion_calle</td>
+                 <td>@a.telefono_caracteristica @a.telefono_nro</td>
+                
+                 <!--Botones-->
+                
+                 <td>
+                     <a asp-page="Inscripciones/Mostrar"
+                        asp-route-alumnoId="@a.id"><i class="bi bi-person-square"></i></a>
+                 </td>
+                 <td>
+                     <a asp-page="Inscripciones/Editar"
+                        asp-route-alumnoId="@a.id"><i class="bi bi-pencil-square"></i></a>
+                 </td>
+                
+                 <td>
+                     <a asp-page="Inscripciones/Borrar"
+                        asp-route-alumnoId="@a.id"><i class="bi bi-trash"></i></a>
+                 </td>
+                
+             </tr>
             }
 
         </table>
