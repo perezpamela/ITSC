@@ -17,7 +17,7 @@ namespace ITSC.WebApp.Pages
         public string permisos { get; set; }
 
         public List<SelectListItem> carreras { get; set; }
-        public SedeCarrera sc { get; set; }  //debería ser por materias en el caso del profesor
+        //public SedeCarrera sc { get; set; }  //debería ser por materias en el caso del profesor
 
         public void OnGet(int usuario)
         {
