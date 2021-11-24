@@ -1,0 +1,10 @@
+﻿@page "{alumnoId:int}"
+@model ITSC.WebApp.Pages.Alumnos.DeleteModel
+@{
+}
+
+Está por borrar el legajo de <strong>@Model.alumno.apellido, @Model.alumno.nombre.</strong> ¿Desea continuar?
+<form method="post">
+    <a asp-page="./List" class="btn btn-outline-primary">Cancelar</a>
+    <button type="submit" value="@Model.alumno.id"class="btn btn-primary">Borrar</button>
+</form>

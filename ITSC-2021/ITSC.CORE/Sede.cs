@@ -17,14 +17,14 @@ namespace ITSC.CORE
         public string direccion_dpto { get; set; }
         public string direccion_barrio { get; set; }
         public string direccion_localidad { get; set; }
-        public string dia_desde { get; set; }
-        public string dia_hasta { get; set; }
+        public Dias dia_desde { get; set; }
+        public Dias dia_hasta { get; set; }
         public string horario_desde { get; set; }
         public string horario_hasta { get; set; }
         public int status { get; set; }
 
         //Relación con Carrera/s
-        public List<Carrera> Carreras { get; set; }
+        //public List<Carrera> Carreras { get; set; }
 
     }
 }
