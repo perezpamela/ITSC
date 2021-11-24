@@ -1,0 +1,16 @@
+﻿@page
+@model ITSC.WebApp.Pages.Sedes.DetailModel
+@{
+}
+
+<div class="container">
+    @if (Model.mensaje != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <button type="button" class="btn-close close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            @Model.mensaje.
+        </div>
+    }
+
+
+</div>

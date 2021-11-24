@@ -13,10 +13,10 @@
     <h5 class="p-1 text-center font-weight-bold alert-info">@Model.carrera.descripcion</h5>
     <section class="row">
         <p class="col-md-4">Plan: @Model.carrera.plan</p>
-        <p class="col-md-6">Inicio de vigencia: @Model.fecha_inicio</p>
+        <p class="col-md-6">Inicio de vigencia: @Model.carrera.plan_start_date.ToString("dd/MM/yyyy")</p>
     </section>
     <section class="row">
-        <p class="col-md-6 offset-4">Fin de vigencia: @Model.fecha_fin</p>
+        <p class="col-md-6 offset-4">Fin de vigencia: @Model.carrera.plan_end_date.ToString("dd/MM/yyyy")</p>
     </section>
     <p class="p-1 text-center font-weight-bold alert-info">@Model.estado</p>
 

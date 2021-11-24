@@ -1,0 +1,9 @@
+﻿@page "{sedeId:int}"
+@model ITSC.WebApp.Pages.Sedes.DeleteModel
+@{
+}
+Está por borrar la siguente sede: <strong>@Model.sede.descripcion.</strong> ¿Desea continuar?
+<form method="post">
+    <a asp-page="./List" class="btn btn-outline-primary">Cancelar</a>
+    <button type="submit" value="@Model.sede.id" class="btn btn-primary">Borrar</button>
+</form>
