@@ -1,6 +1,7 @@
-﻿@page
+﻿@page "{sedeId:int}"
 @model ITSC.WebApp.Pages.Sedes.DetailModel
 @{
+
 }
 
 <div class="container">
@@ -11,6 +12,32 @@
             @Model.mensaje.
         </div>
     }
+    <h5 class="p-1 text-center font-weight-bold alert-info">@Model.sede.descripcion</h5>
+    <section class="row">
+        <p class="col-md-4">telefono: @Model.sede.tel_caracteristica - @Model.tel_nro</p>
+        <p class="col-md-6">correo electrónico: @Model.sede.email</p>
+    </section>
+    <section class="row">
+        <p class="col-md-4">calle:@Model.sede.direccion_calle  numero: @Model.sede.tel_nro</p>
+        <!--<p class="col-md-4">numero: @Model.sede.tel_nro</p>-->
+        <p class="col-md-4">piso:@Model.sede.direccion_piso  departamento:@Model.sede.direccion_dpto</p>
+        <!--<p class="col-md-4">departamento:@Model.sede.direccion_dpto</p>-->
+        <p class="col-md-4">barrio: @Model.sede.direccion_barrio</p>
+        <p class="col-md-4">localidad: @Model.sede.direccion_localidad</p>
+    </section>
 
+    <section class="row">
+        <p class="col-md-4">dia de atencion: @Model.dia_desde </p>
+        <p class="col-md-4"> @Model.sede.dia_hasta</p>
+    </section>
+    <section class="row">
+        <p class="col-md-4">horario de atencion: @Model.horario_desde </p>
+        <p class="col-md-4"> @Model.sede.horario_hasta</p>
+    </section>
+    <section class="row">
+        <div class="row">
+            <p class="p-1 text-center font-weight-bold alert-info">@Model.status</p>
+        </div>
+    </section>
 
 </div>
