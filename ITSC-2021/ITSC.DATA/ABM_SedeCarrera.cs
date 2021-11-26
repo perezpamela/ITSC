@@ -6,5 +6,8 @@ namespace ITSC.DATA
 {
     class ABM_sedecarrera
     {
+
+        
+
     }
 }

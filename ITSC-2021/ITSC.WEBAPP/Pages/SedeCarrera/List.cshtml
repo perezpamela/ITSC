@@ -1,0 +1,59 @@
+﻿@page
+@model ITSC.WebApp.Pages.SedeCarrera.ListModel
+@{
+}
+
+<div class="container">
+    @if (Model.Mensaje != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <button type="button" class="btn-close close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            @Model.Mensaje.
+        </div>
+
+    }
+
+    <a asp-page="./Edit" class="btn btn-primary mb-2">Cargar SedeCarrera</a>
+    <form method="get" class="mt-1" hidden="hidden">
+        <div class="input-group mt-2 mb-2">
+            <input class="form-control" asp-for="strBusqueda" />
+            <button type="submit" class="btn btn-outline-secondary"><i class="bi bi-search"></i></button>
+        </div>
+    </form>
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <td>Carrera</td>
+                <td>Turno</td>
+                <td>Sede</td>
+                <td>Acciones</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </thead>
+
+            @foreach (var sc in Model.sc)
+            {
+            <tr>
+                <td>@sc.carrera.descripcion</td>
+                <td>@sc.turno</td>
+                <td>@sc.sede.descripcion</td>
+                <td>
+                    <a asp-page="./Edit"
+                       asp-route-sedeCarreraId="@sc.id"><i class="bi bi-pencil-square"></i></a>
+                </td>
+                <td>
+                    <a asp-page="./Delete"
+                       asp-route-sedeCarreraId="@sc.id">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                </td>
+                <td>
+                    <a asp-page="./Detail"
+                       asp-route-sedeCarreraId="@sc.id"><i class="bi bi-box-arrow-in-right"></i></a>
+                </td>
+            </tr>
+            }
+
+    </table>
+</div>

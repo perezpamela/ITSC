@@ -56,8 +56,8 @@ namespace ITSC.WebApp.Pages
                     menuOpts.Add(new menu { textoBtn = "(!)Alumnos", urlBtn = "/Alumnos/List" });
                     menuOpts.Add(new menu { textoBtn = "(!)Sedes", urlBtn = "/Sedes/List" });
                     menuOpts.Add(new menu { textoBtn = "(!)Carreras", urlBtn = "/Carreras/List" });
-                    menuOpts.Add(new menu { textoBtn = "Materias", urlBtn = "/Carreras/List" });
-                    menuOpts.Add(new menu { textoBtn = "Materias", urlBtn = "/Carreras/List" });
+                    menuOpts.Add(new menu { textoBtn = "(!)Sede/Carrera", urlBtn = "/SedeCarrera/List" });
+                    //menuOpts.Add(new menu { textoBtn = "Materias", urlBtn = "/Carreras/List" });
 
 
                     return menuOpts;

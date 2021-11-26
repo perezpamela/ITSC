@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ITSC.WebApp.Pages.SedeCarrera
 {
-    public class DeleteModel : PageModel
+    public class DeleteModel : MBase//PageModel
     {
         public void OnGet()
         {

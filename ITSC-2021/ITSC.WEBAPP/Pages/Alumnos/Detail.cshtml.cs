@@ -22,8 +22,6 @@ namespace ITSC.WebApp.Pages.Alumnos
         public string Mensaje { get; set; }
         public void OnGet(int alumnoId)
         {
-            
-
             alumno = ABM_Alumno.Get(alumnoId);
             str_fecha_nacimiento = alumno.fechaNacimiento.ToString("dd/MM/yyyy");
             str_status = Convert.ToString((Estado)alumno.status);

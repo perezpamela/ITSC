@@ -4,14 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ITSC.DATA;
-using ITSC.CORE;
 
-namespace ITSC.WebApp.Pages.SedeCarrera
+namespace ITSC.WebApp.Pages.SedexCarrera
 {
-    public class EditModel : MBase
+    public class ListModel : PageModel
     {
-        public ITSC.CORE.SedeCarrera SC { get; set; }
-
+        public void OnGet()
+        {
+        }
     }
 }
