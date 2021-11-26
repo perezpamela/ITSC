@@ -11,7 +11,17 @@ namespace ITSC.WebApp.Pages.SedeCarrera
 {
     public class EditModel : MBase
     {
-        public ITSC.CORE.SedeCarrera SC { get; set; }
+        [BindProperty]
+        public ITSC.CORE.SedeCarrera sc { get; set; }
+
+        public IActionResult OnGet ( int? SedeCarreraId)
+        {
+            if (SedeCarreraId.HasValue)
+            {
+                sc= abm
+            }
+        }
+        
 
     }
 }

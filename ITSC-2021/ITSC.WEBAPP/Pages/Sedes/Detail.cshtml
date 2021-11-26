@@ -19,20 +19,20 @@
     </section>
     <section class="row">
         <p class="col-md-4">calle:@Model.sede.direccion_calle  numero: @Model.sede.tel_nro</p>
-        <!--<p class="col-md-4">numero: @Model.sede.tel_nro</p>-->
+        @*<p class="col-md-4">numero: @Model.sede.tel_nro</p>*@
         <p class="col-md-4">piso:@Model.sede.direccion_piso  departamento:@Model.sede.direccion_dpto</p>
-        <!--<p class="col-md-4">departamento:@Model.sede.direccion_dpto</p>-->
+        @*<p class="col-md-4">departamento:@Model.sede.direccion_dpto</p>*@
         <p class="col-md-4">barrio: @Model.sede.direccion_barrio</p>
         <p class="col-md-4">localidad: @Model.sede.direccion_localidad</p>
     </section>
 
     <section class="row">
-        <p class="col-md-4">dia de atencion: @Model.dia_desde </p>
-        <p class="col-md-4"> @Model.sede.dia_hasta</p>
+        <p class="col-md-4">dia de atencion: @Model.dia_desde a @Model.sede.dia_hasta  </p>
+       <!-- <p class="col-md-4">  </p>-->
     </section>
     <section class="row">
-        <p class="col-md-4">horario de atencion: @Model.horario_desde </p>
-        <p class="col-md-4"> @Model.sede.horario_hasta</p>
+        <p class="col-md-4">horario de atencion: @Model.horario_desde hasta @Model.sede.horario_hasta </p>
+        @*<p class="col-md-4"> @Model.sede.horario_hasta</p>*@
     </section>
     <section class="row">
         <div class="row">

@@ -25,8 +25,8 @@ namespace ITSC.WebApp.Pages.Sedes
             else
             {
                 S = new Sede();
-                S.descripcion = S.descripcion;
-                S.direccion_barrio = S.direccion_barrio;  //posible error
+               /* S.descripcion = S.descripcion;
+                S.direccion_barrio = S.direccion_barrio; */
             }
             return Page();
         }
