@@ -15,8 +15,8 @@ namespace ITSC.WebApp.Pages.SedeCarrera
         public string Mensaje { get; set; }
         public string strBusqueda { get; set; }
         public IEnumerable<ITSC.CORE.SedeCarrera> sc { get; set; }
-        public List<Carrera> c { get; set; }
-        public List<Sede> s { get; set; }
+        //public List<Carrera> c { get; set; }
+        //public List<Sede> s { get; set; }
 
         public void OnGet(string strBusqueda)
         {

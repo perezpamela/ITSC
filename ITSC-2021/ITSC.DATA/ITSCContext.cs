@@ -24,7 +24,7 @@ namespace ITSC.DATA
 
         protected override void OnConfiguring(DbContextOptionsBuilder OpsBuilder)
         {
-            OpsBuilder.UseSqlServer("Data Source=localhost\\SQLEXPRESS;Initial Catalog = ITSC_DB; Integrated Security = True");
+            OpsBuilder.UseSqlServer("Data Source=localhost\\SQLEXPRESS;Initial Catalog = ITSC_DB_v2; Integrated Security = True");
         }
 
     }

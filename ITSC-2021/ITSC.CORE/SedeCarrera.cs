@@ -15,9 +15,11 @@ namespace ITSC.CORE
 
 
         public Sede sede { get; set; }
+        [Required]
         public int sede_id { get; set; }
 
         public Carrera carrera { get; set; }
+        [Required]
         public int carrera_id { get; set; }
     }
 }

@@ -17,13 +17,15 @@ namespace ITSC.WebApp.Pages
         public static int usrPermiso = 777;
 
         #region Base del menú
-
+        
         public List<menu> menuOpts = new List<menu> { };
         
         #endregion
 
         public List<menu> generaMenu(int usrPermiso)
         {
+            usuario = 36240589;
+            usuario_nombre = "ADM";
             switch (usrPermiso)
             {
                 case 1://Alumno
