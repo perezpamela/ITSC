@@ -1,6 +1,7 @@
 ﻿using ITSC.CORE;
 using ITSC.DATA;
 using System;
+using static System.Console;
 
 namespace Test
 {
@@ -8,21 +9,18 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            //Alumno al1 = new Alumno();
-            //al1.nombre = "Pamela";
-            //al1.apellido = "Perez";
-            //al1.dni = 36240589;
-            //Alumno al2 = new Alumno();
-            //al2.nombre = "Juan";
-            //al2.apellido = "Perez";
-            //al2.dni = 12678990;
+            SedeCarrera sc = ABMSedeCarrera.Get(1);
+            sc.carrera = ABMCarrera.Get(sc.carrera_id);
+            sc.sede = ABMSede.Get(sc.sede_id);
 
-            //ABM_Alumno.Save(al1);
-            //ABM_Alumno.Save(al2);
-
-            foreach(var al in ABM_Alumno.Get())
+           
+            WriteLine(sc.turno);
+            WriteLine(sc.status);
+            WriteLine(sc.carrera.descripcion);
+            WriteLine(sc.sede.descripcion);
+            foreach (var s in ABMSedeCarrera.Get("1"))
             {
-                Console.WriteLine($"Nombre: {al.nombre}. Apellido: {al.apellido}. DNI: {al.dni}.");
+                Console.WriteLine($"Turno: {s.turno}. Carrera_id: {s.carrera_id}");
             }
         }
     }

@@ -4,14 +4,16 @@ using ITSC.DATA;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ITSC.DATA.Migrations
 {
     [DbContext(typeof(ITSCContext))]
-    partial class ITSCContextModelSnapshot : ModelSnapshot
+    [Migration("20211123032624_Nuevos_tipos_Datos")]
+    partial class Nuevos_tipos_Datos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

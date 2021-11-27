@@ -2,8 +2,49 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    Layout = null;
 }
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ITSC.WebApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class='d-flex justify-content-center'>
+        <h4 class='mt-5'>Instituto Técnico Superior Córdoba</h4>
+    </div>
+    <div class="d-flex flex-row justify-content-center bd-highlight mt-3">
+        <img class='p-5' src='https://www.institutotecnicocordoba.com/_files/200001679-a070ba16b5/logo%202018.jpg'>
+        <form class='d-flex align-items-center  flex-column' method="post">
+            <h5 class='mt-5'>Iniciar Sesión</h5>
+            <div class="input-group m-3">
+                <span class="input-group-text">
+                    <i class="bi bi-person-fill"></i>
+                </span>
+                <input id='usuario' class="form-control" asp-for="usuarioDNI" placeholder='Usuario'>
+            </div>
+            <div class="input-group m-3">
+                <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+                <input disabled class="form-control" type='password' placeholder='Contraseña'>
+            </div>
+            <button type="submit" class='btn btn-primary mb-3' 
+                                                 value="@Model.usuarioDNI">Aceptar</button>
+            <a href='./Alumnos/List' class='link-info'>Recuperar contraseña</a>
+        </form>
+    </div>
 
-<div>
-    <h1>Holis</h1>
-</div>
+    <footer class="border-top footer text-muted">
+        <div class="container text-center">
+            &copy; 2021 - ITSC.WebApp - <a asp-area="" asp-page="/SedeCarrera/List">Prueba SedeCarreras</a>
+        </div>
+    </footer>
+   
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

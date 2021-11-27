@@ -1,0 +1,68 @@
+﻿@page
+@model ITSC.WebApp.Pages.Sedes.ListModel
+@{
+}
+
+<div class="container">
+    @if (Model.mensaje != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <button type="button" class="btn-close close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            @Model.mensaje.
+        </div>
+    }
+    <section>
+        <a asp-page="./Edit" class="btn btn-primary">Cargar Sede</a>
+        <!--El buscador-->
+        <form>
+            <div class="input-group mt-2 mb-2">
+
+                <div class="input-group">
+                    <input class="form-control" asp-for="filtro" />
+                    <button type="submit" class="btn btn-outline-secondary"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section>
+        <table class="table table-hover table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <td>Descripcion</td>
+                    <td>Direccion</td>
+                    <td>Email</td>
+                    <td colspan="3">Acciones</td>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var s in Model.sedes)
+                {
+                <tr>
+                    <td>@s.descripcion</td>
+                    <td>@s.direccion_calle @s.direccion_nro</td>
+                    <td>@s.email</td>
+                    <td>
+                        <a asp-page="./Edit"
+                           asp-route-sedeId="@s.id"><i class="bi bi-pencil-square"></i></a>
+                    </td>
+                    <td>
+                        <a asp-page="./Delete"
+                           asp-route-sedeId="@s.id">
+                            <i class="bi bi-trash"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-page="./Detail"
+                           asp-route-sedeId="@s.id"><i class="bi bi-box-arrow-in-right"></i></a>
+                    </td>
+                </tr>
+                  }
+                    
+                </tbody>
+        </table>
+    </section>
+
+
+</div>

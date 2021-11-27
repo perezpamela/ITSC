@@ -5,14 +5,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
+
+
+
 namespace ITSC.DATA
 {
     public class ABM_Alumno
     {
-        public static IEnumerable<Alumno> Get()
+
+        //prueba de combobox
+        public static List<string> GetNombres()
         {
-            using (var db = new ITSCContext()) {
-                return db.alumnos.ToList();
+            using(var db = new ITSCContext())
+            {
+                var nombres = from a in db.alumnos select a.id.ToString();
+                return nombres.ToList();
+            }
+        }
+
+
+
+        public static Alumno GetAlumnoDni(int dni)
+        {
+            using(var db = new ITSCContext()) {
+            Alumno a = db.alumnos.ToList().Where(a => a.dni == dni).FirstOrDefault();
+                if (a is null) { return db.alumnos.Find(2); }
+                else
+                { return a; }
             }
         }
 
@@ -26,7 +46,7 @@ namespace ITSC.DATA
         public static IEnumerable<Alumno> Get(string filtroStr)
         {
             using (var db = new ITSCContext()) {
-                IEnumerable<Alumno> alumnos = db.alumnos.ToList();
+                IEnumerable<Alumno> alumnos = db.alumnos.ToList().Where(a => a.status ==0);
                 if (!String.IsNullOrEmpty(filtroStr))
                 {
                     //alumnos = alumnos.Where(al => al.nombre.Contains(filtroStr)); no diferencia mayus/minus
@@ -34,7 +54,12 @@ namespace ITSC.DATA
                     alumnos = from a in alumnos
                               let nombreUpper = a.nombre.ToUpper()
                               let apellidoUpper = a.apellido.ToUpper()
-                              where nombreUpper.Contains(filtroStr.ToUpper()) || apellidoUpper.Contains(filtroStr.ToUpper())
+                              let dniStr = a.dni.ToString()
+                              where ( nombreUpper.StartsWith(filtroStr.ToUpper()) 
+                              || apellidoUpper.StartsWith(filtroStr.ToUpper()) 
+                              || dniStr.StartsWith(filtroStr) )
+                              && a.status == 0 //activo
+
                               orderby a.apellido, a.nombre
                               select a;
                 }
@@ -42,7 +67,7 @@ namespace ITSC.DATA
             }
         }
 
-        public static void Save(Alumno alumno)
+        public static Alumno Save(Alumno alumno)
         {
             using (var db = new ITSCContext()) {
             
@@ -54,6 +79,7 @@ namespace ITSC.DATA
                     db.alumnos.Add(alumno);
                 }
                 db.SaveChanges();
+                return alumno;
                     
             }
         }
@@ -65,8 +91,11 @@ namespace ITSC.DATA
                 Alumno al = db.alumnos.Find(id);
                 if(al != null)
                 {
-                    al.status = 1;// por defecto es 0
+                    al.status = 1;// por defecto es 0 --habría que cambiar a un str más descriptivo o a un enum
                     ABM_Alumno.Save(al);
+                    //Momentaneamente borra de la base de datos en vez de dar de baja
+                    //db.Entry(al).State = EntityState.Deleted;
+                    //db.SaveChanges();
                     return true;
                 }
                 return false;
