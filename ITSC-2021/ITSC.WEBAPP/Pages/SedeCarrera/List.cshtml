@@ -34,25 +34,27 @@
 
             @foreach (var sc in Model.sc)
             {
-            <tr>
-                <td>@sc.carrera.descripcion</td>
-                <td>@sc.turno</td>
-                <td>@sc.sede.descripcion</td>
-                <td>
-                    <a asp-page="./Edit"
-                       asp-route-sedeCarreraId="@sc.id"><i class="bi bi-pencil-square"></i></a>
-                </td>
-                <td>
-                    <a asp-page="./Delete"
-                       asp-route-sedeCarreraId="@sc.id">
-                        <i class="bi bi-trash"></i>
-                    </a>
-                </td>
-                <td>
-                    <a asp-page="./Detail"
-                       asp-route-sedeCarreraId="@sc.id"><i class="bi bi-box-arrow-in-right"></i></a>
-                </td>
-            </tr>
+    <tr>
+        <td>@sc.carrera.descripcion</td>
+        <td>@sc.turno</td>
+
+
+        <td>@sc.sede.descripcion</td>
+        <td>
+            <a asp-page="./Edit"
+               asp-route-sedeCarreraId="@sc.id"><i class="bi bi-pencil-square"></i></a>
+        </td>
+        <td>
+            <a asp-page="./Delete"
+               asp-route-sedeCarreraId="@sc.id">
+                <i class="bi bi-trash"></i>
+            </a>
+        </td>
+        <td>
+            <a asp-page="./Detail"
+               asp-route-sedeCarreraId="@sc.id"><i class="bi bi-box-arrow-in-right"></i></a>
+        </td>
+    </tr>
             }
 
     </table>

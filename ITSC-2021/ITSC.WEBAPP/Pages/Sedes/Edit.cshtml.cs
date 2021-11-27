@@ -12,12 +12,11 @@ namespace ITSC.WebApp.Pages.Sedes
     public class EditModel : MBase//PageModel
     {
         [BindProperty]
-
         public Sede S { get; set; }
 
         public IActionResult OnGet(int? sedeId)
         {
-            if (    sedeId.HasValue)
+            if (sedeId.HasValue)
             {
                 S = ABMSede.Get(sedeId.Value);
 
@@ -35,14 +34,14 @@ namespace ITSC.WebApp.Pages.Sedes
 
         public IActionResult OnPost()
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return Page();
             }
 
             S = ABMSede.Save(S);
             TempData["MensajeSede"] = "se cambiaron los datos correctamente";
-            return RedirectToPage("/Detail", new { sedeId = S.id });
+            return RedirectToPage("./Detail", new { sedeId = S.id });
         }
 
 

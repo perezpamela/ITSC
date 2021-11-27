@@ -1,4 +1,79 @@
-﻿@page
+﻿@page "{sedeCarreraId:int?}"
 @model ITSC.WebApp.Pages.SedeCarrera.EditModel
 @{
 }
+
+
+@if (@Model.SC.id != 0)
+{
+<h1>Editando: @Model.SC.carrera.descripcion Turno: @Model.SC.turno</h1> }
+            else
+            {
+<h1>Cargando nueva sede/carrera.</h1>}
+
+<div class="container">
+    <form method="post">
+        <input type="hidden" asp-for="@Model.SC.id" />
+        <section class="row">
+            <div class="form-group col-md-8">
+                <label asp-for="@Model.SC.status">Estado:</label>
+                <input class="form-control" asp-for="@Model.SC.status" />
+                <span asp-validation-for="@Model.SC.status" class="text-warning"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.SC.turno">turno:</label>
+                <input class="form-control" asp-for="@Model.SC.turno" />
+                <span asp-validation-for="@Model.SC.turno" class="text-warning"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SC.carrera_id">Carrera:</label>
+                <select asp-for="@Model.SC"
+                        asp-items="@Model.CarreraList">
+                </select>
+            </div>
+            <span asp-validation-for="SC.carrera_id" class="text-warning"></span>
+
+        </section>
+        <section class="row">
+            <div class="offset-8 col-md-2">
+                <a asp-page="./List" class="btn btn-outline-secondary form-control">Cancelar</a>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary form-control">Guardar</button>
+            </div>
+        </section>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

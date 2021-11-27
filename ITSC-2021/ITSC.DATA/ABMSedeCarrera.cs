@@ -42,6 +42,25 @@ namespace ITSC.DATA
         }
 
 
+        public static SedeCarrera Save(SedeCarrera sedeCa)
+        {
+            using (var db = new ITSCContext())
+            {
+
+                if (sedeCa.id != 0)
+                {
+                    db.Entry(sedeCa).State = EntityState.Modified;
+                }
+                else
+                {
+                    db.sedes_carreras.Add(sedeCa);
+                }
+                db.SaveChanges();
+                return sedeCa;
+            }
+        }
+
+
 
 
 

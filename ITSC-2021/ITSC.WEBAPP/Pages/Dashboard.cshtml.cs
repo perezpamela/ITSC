@@ -31,11 +31,11 @@ namespace ITSC.WebApp.Pages
                 }) ;
             }
             //........................................................................
-            usuario_nombre = al.apellido+" "+al.nombre;
-            dropdonwOptions = carreras;
-            strFilter = "0091_p1";
-            carrera = Convert.ToInt32(strFilter.Substring(0, strFilter.IndexOf("_")));
-            permisos = strFilter.Substring(strFilter.IndexOf("_") + 1);
+            //usuario_nombre = al.apellido+" "+al.nombre;
+            //dropdonwOptions = carreras;
+            //strFilter = "0091_p1";
+            //carrera = Convert.ToInt32(strFilter.Substring(0, strFilter.IndexOf("_")));
+            //permisos = strFilter.Substring(strFilter.IndexOf("_") + 1);
             //menuOptions = carrera.ToString()+permisos;
             
         }
