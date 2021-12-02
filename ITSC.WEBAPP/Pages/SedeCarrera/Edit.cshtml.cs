@@ -15,8 +15,8 @@ namespace ITSC.WebApp.Pages.SedeCarrera
         [BindProperty(SupportsGet =true)]
         public ITSC.CORE.SedeCarrera SC { get; set; }
 
-        [BindProperty(SupportsGet = true)]
-        public List<SelectListItem> CarreraList { get; set; }
+        /*[BindProperty(SupportsGet = true)]
+        public List<SelectListItem> CarreraList { get; set; }*/
 
         [BindProperty(SupportsGet =true)]
         public IEnumerable<Carrera> carreras { get; set; }
@@ -40,10 +40,10 @@ namespace ITSC.WebApp.Pages.SedeCarrera
 
             SC.carrera = ABMCarrera.Get(SC.carreraid);
             SC.sede = ABMSede.Get(SC.sedeid);
-            CarreraList = new List<SelectListItem>();
+              //CarreraList = new List<SelectListItem>();
             foreach (var n in ABMCarrera.Get(""))
             {
-                CarreraList.Add(new SelectListItem { Text = n.descripcion, Value = n.id.ToString() });   
+              //CarreraList.Add(new SelectListItem { Text = n.descripcion, Value = n.id.ToString() });   
                 
             }
 

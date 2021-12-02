@@ -2,3 +2,62 @@
 @model ITSC.WebApp.Pages.Inscripciones.ListModel
 @{
 }
+
+<div class="container">
+    <div class="alert alert-success alert-dismissible fade show" role="alert" >
+        <button type="button" class=" btn-close close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        @Model.mensaje;
+    </div>
+
+    <section>
+        <a asp-page="./Edit" class="btn btn-primary">Cargar Nueva Carrera</a>
+
+    </section>
+
+    <section>
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <td>Alumno</td>
+                    <td>Carrera</td>
+                    <td>Sede</td>
+                    <td>DNI</td>
+                    <td>Acta de Nacimiento</td>
+                    <td>Analitico del Secundario</td>
+                    <td>Titulo del Secundario</td>
+                    <td>Acciones</td>
+                </tr>
+            </thead>
+
+            @foreach(var a in @Model.ins)
+            {
+        <tr>
+            <td>@a.alumno.apellido, @a.alumno.nombre</td>
+            <td>@a.sedecarrera.carrera.descripcion</td>
+            <td>@a.sedecarrera.sede.descripcion</td>
+            <td>@a.doc_dni</td>
+            <td>@a.doc_acta_nac</td>
+            <td>@a.doc_analitico_sec</td>
+            <td>@a.doc_titulo_sec</td>
+            <td>
+                <a asp-page="./Edit"
+                   asp-route-alumnoId="@a.id"><i class="bi bi-pencil-square"></i></a>
+            </td>
+
+            <td>
+                <a asp-page="./Delete"
+                   asp-route-alumnoId="@a.id">
+                    <i class="bi bi-trash"></i>
+                </a>
+            </td>
+
+            <td>
+                <a asp-page="./Detail"
+                   asp-route-alumnoId="@a.id"><i class="bi bi-box-arrow-in-right"></i></a>
+            </td>
+
+        </tr>
+            }
+        </table>
+    </section>
+</div>

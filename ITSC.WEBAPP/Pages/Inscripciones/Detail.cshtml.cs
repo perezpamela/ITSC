@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ITSC.WebApp.Pages.Inscripciones
 {
-    public class DetailModel : PageModel
+    public class DetailModel : MBase
     {
         public void OnGet()
         {

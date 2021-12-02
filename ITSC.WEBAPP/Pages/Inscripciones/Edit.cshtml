@@ -1,4 +1,98 @@
-﻿@page
+﻿@page "{inscripcionId:int?}"
 @model ITSC.WebApp.Pages.Inscripciones.EditModel
 @{
 }
+@if(Model.ins.id != 0)
+ {
+  <h1 class=" h1"> Editando inscripcion de: @Model.ins.alumno.nombre</h1>
+ }
+ else
+ {
+   <h1 class="h1"> Creando Nueva Inscripcion</h1>
+ }
+
+
+<div class="container">
+
+    <form method="post">
+        <!--Seleccionar Alumno-->
+        <div class=" col-md-6">
+            <select asp-for="@Model.ins.alumnoid">
+                @foreach (var a in Model.alumnos)
+                {
+                    <option value="@a.id">@a.nombre, @a.apellido</option>
+                }
+            </select>
+        </div>
+        <!--Seleccionar Sede/Carrera-->
+        <div class=" col-md-6">
+            <select asp-for="@Model.ins.sedecarreraid">
+                @foreach (var a in Model.Sc)
+                {
+                    <option value="@a.id"> @a.sede.descripcion</option>
+                    <option value="@a.id"> @a.carrera.descripcion</option>
+
+                }
+            </select>
+        </div>
+
+        <input type="Hidden" asp-for="@Model.ins.id" />
+
+        <section class="row">
+
+            <!--Saldo-->
+            <div class="form-group col-md-8">
+                <label asp-for="@Model.ins.cooperadora_saldo">Saldo de cooperadora:</label>
+                <input class="form-control" asp-for="@Model.ins.cooperadora_saldo" />
+                <span asp-validation-for="@Model.ins.cooperadora_saldo"></span>
+
+                <label asp-for="@Model.ins.cooperadora_total">Total:</label>
+                <input class="form-control" asp-for="@Model.ins.cooperadora_total" />
+                <span asp-validation-for="@Model.ins.cooperadora_total"></span>
+            </div>
+
+            <!--Total-->
+            <!--<div class="form-group col-md-8">
+
+            </div>-->
+
+            <!--Acta de Nacimiento-->
+            <div class="form-group col-md-8">
+                <label asp-for="@Model.ins.doc_acta_nac">Acta de Nacimiento:</label>
+                <input class="form-control" asp-for="@Model.ins.doc_acta_nac" />
+                <span asp-validation-for="@Model.ins.doc_acta_nac"></span>
+            </div>
+
+            <!--Analitico-->
+            <div class="form-group col-md-8">
+                <label asp-for="@Model.ins.doc_analitico_sec">Analitico del Secundario:</label>
+                <input class="form-control" asp-for="@Model.ins.doc_analitico_sec" />
+                <span asp-validation-for="@Model.ins.doc_analitico_sec"></span>
+
+            </div>
+
+            <div class="form-group" col-md-8>
+                <!--Titulo del Secundario-->
+                <label asp-for="@Model.ins.doc_titulo_sec">Titulo del Secundario:</label>
+                <input class="form-control" asp-for="@Model.ins.doc_titulo_sec" />
+                <span asp-validation-for="@Model.ins.doc_titulo_sec"></span>
+            </div>
+
+            <!--Documento-->
+            <div class="form-group col-md-8">
+                <label asp-for="@Model.ins.doc_dni">Documento:</label>
+                <input class="form-control" asp-for="@Model.ins.doc_analitico_sec" />
+                <span asp-validation-for="@Model.ins.doc_analitico_sec"></span>
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="offset-8 col-md-2">
+                <a asp-page="./List" class="btn btn-outline-secondary form-control">Cancelar</a>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary form-control">Guardar</button>
+            </div>
+        </section>
+    </form>
+</div>
