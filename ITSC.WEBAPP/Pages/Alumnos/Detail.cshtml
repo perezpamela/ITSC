@@ -1,0 +1,59 @@
+﻿@page "{alumnoId:int}"
+@model ITSC.WebApp.Pages.Alumnos.DetailModel
+@{
+}
+
+@if (Model.Mensaje != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <button type="button" class="btn-close close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        @Model.Mensaje.
+    </div>
+
+}
+
+
+
+<div class="container">
+
+    <p class="p-1 text-center font-weight-bold alert-info">@Model.alumno.apellido.ToUpper(), @Model.alumno.nombre.ToUpper()</p>
+
+    <section class="row">
+        <!--FILA DNI - FECHA NACIMIENTO-->
+        <p class="col-md-6">DNI: @Model.alumno.dni.</p>
+        <p class="col-md-6">Fecha Nacimiento: @Model.str_fecha_nacimiento. (@Model.edad años) </p>
+    </section>
+
+    <section class="row">
+        <!--FILA permisos - telefono-->
+        <p class="col-md-6">Usuario: @Model.alumno.dni</p>
+        <p class="col-md-6">Permisos de usuario: @Model.alumno.usuario_tipo.</p>
+    </section>
+    <section class="row">
+        <!--FILA telefono - email-->
+        <p class="col-md-6">Teléfono: (@Model.alumno.telefono_caracteristica) @Model.alumno.telefono_nro </p>
+        <p class="col-md-6">Email: @Model.alumno.email.</p>
+    </section>
+
+    <section class="row">
+        <!--FILA direccion-->
+        <p class="col-md-6">Calle: @Model.alumno.direccion_calle. Nro.: @Model.alumno.direccion_nro.  </p>
+        <p class="col-md-6">Piso: @Model.alumno.direccion_piso. Depto.: @Model.alumno.direccion_dpto. </p>
+    </section>
+    <section class="row">
+        <!--FILA barrio - localidad-->
+        <p class="col-md-6">Barrio: @Model.alumno.direccion_barrio.  </p>
+        <p class="col-md-6">Localidad: @Model.alumno.direccion_localidad. </p>
+    </section>
+    <section class="row">
+        <!--FILA barrio - localidad-->
+        <p class="col-md-6">Contacto de Emergencia: @Model.alumno.contacto_emergencia_nombre. </p>
+        <p class="col-md-6">Tel.: (@Model.alumno.emergencia_tel_caracteristica) @Model.alumno.emergencia_tel_nro.</p>
+    </section>
+
+    <p class="p-1 text-center font-weight-bold alert-info">@Model.str_status</p>
+
+
+    <a class="position-absolute m-3 btn btn-outline-secondary"
+       asp-page="./List"><i class="bi bi-arrow-left-square text-lg-left"></i> Lista Alumnos</a>
+</div>

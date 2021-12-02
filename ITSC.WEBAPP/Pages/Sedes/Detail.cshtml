@@ -1,0 +1,38 @@
+﻿@page "{sedeId:int}"
+@model ITSC.WebApp.Pages.Sedes.DetailModel
+@{
+
+}
+
+<div class="container">
+    @if (Model.mensaje != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <button type="button" class="btn-close close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            @Model.mensaje.
+        </div>
+    }
+    <h5 class="p-1 text-center font-weight-bold alert-info">@Model.sede.descripcion</h5>
+    <section class="row">
+        <p class="col-md-4">Teléfono: @Model.sede.tel_caracteristica - @Model.sede.tel_nro</p>
+        <p class="col-md-6">correo electrónico: @Model.sede.email</p>
+    </section>
+    <section class="row">
+        <p class="col-md-4">Calle:@Model.sede.direccion_calle  Número: @Model.sede.tel_nro</p>
+        <!--<p class="col-md-4">numero: @Model.sede.tel_nro</p>-->
+        <p class="col-md-4">Piso:@Model.sede.direccion_piso  Departamento:@Model.sede.direccion_dpto</p>
+        <!--<p class="col-md-4">departamento:@Model.sede.direccion_dpto</p>-->
+        <p class="col-md-4">Barrio: @Model.sede.direccion_barrio</p>
+        <p class="col-md-4">Localidad: @Model.sede.direccion_localidad</p>
+    </section>
+
+    <section class="row">
+        <p class="col-md-4">Días de atención: @Model.sede.dia_desde a @Model.sede.dia_hasta  </p>
+        <p class="col-md-4"> Horario de atención: @Model.sede.horario_desde hs. a @Model.sede.horario_hasta hs.</p>
+    </section>
+    
+    @*<section class="row">
+            <p class="p-1 text-center font-weight-bold alert-info">@Model.sede.status</p>
+    </section>*@
+
+</div>

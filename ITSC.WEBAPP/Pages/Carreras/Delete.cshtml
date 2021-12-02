@@ -1,0 +1,7 @@
+﻿@page "{carreraId:int}"
+@model ITSC.WebApp.Pages.Carreras.DeleteModel
+Está por borrar la siguente carrera: <strong>@Model.carrera.descripcion. Plan: @Model.carrera.plan</strong> ¿Desea continuar?
+<form method="post">
+    <a asp-page="./List" class="btn btn-outline-primary">Cancelar</a>
+    <button type="submit" value="@Model.carrera.id" class="btn btn-primary">Borrar</button>
+</form>

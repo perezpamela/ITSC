@@ -1,0 +1,99 @@
+﻿@page "{sedeCarreraId:int?}"
+@model ITSC.WebApp.Pages.SedeCarrera.EditModel
+@{
+}
+
+
+@if (@Model.SC.id != 0)
+{
+<h1>Editando: @Model.SC.carrera.descripcion Turno: @Model.SC.turno</h1> }
+            else
+            {
+<h1>Cargando nueva sede/carrera.</h1>}
+
+<div class="container">
+    <form method="post">
+        <input type="hidden" asp-for="@Model.SC.id" />
+        <section class="row">
+            <div class="form-group col-md-8">
+                <label asp-for="@Model.SC.status">Estado:</label>
+                <input class="form-control" asp-for="@Model.SC.status" />
+                <span asp-validation-for="@Model.SC.status" class="text-warning"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.SC.turno">turno:</label>
+                <input class="form-control" asp-for="@Model.SC.turno" />
+                <span asp-validation-for="@Model.SC.turno" class="text-warning"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SC.carreraid">Carrera:</label>
+
+                <select asp-for="@Model.SC.carreraid">
+                    @foreach (var c in Model.carreras)
+                    {
+                        <option value="@c.id">@c.descripcion</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SC.sedeid">Sede:</label>
+
+                <select asp-for="@Model.SC.sedeid">
+                    @foreach (var s in Model.sedes)
+                    {
+                        <option value="@s.id">@s.descripcion</option>
+                    }
+                </select>
+            </div>
+
+
+
+
+
+
+
+        </section>
+        <section class="row">
+            <div class="offset-8 col-md-2">
+                <a asp-page="./List" class="btn btn-outline-secondary form-control">Cancelar</a>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary form-control">Guardar</button>
+            </div>
+        </section>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
